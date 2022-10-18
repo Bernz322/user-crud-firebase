@@ -1,0 +1,8 @@
+export const ACTION_TYPE = {
+    GET_USERS: "GET_USERS",
+    GET_USER: "GET_USER",
+    ADD_USER: "ADD_USER",
+    UPDATE_USER: "UPDATE_USER",
+    DELETE_USER: "DELETE_USER",
+    RESET: "RESET"
+};
