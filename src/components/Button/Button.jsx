@@ -2,14 +2,44 @@ import React from 'react';
 import "./button.scss";
 
 const Button = ({ variant, type, text, bold, loading, click }) => {
+    let bg;
+    let width;
+    let margin;
+    let padding;
+
+    if (variant === "cyan") {
+        bg = "#66ffff";
+    } else if (variant === "dark") {
+        bg = "#b3b3b3";
+    } else {
+        bg = "white";
+    }
+
+    if (type === "unstyled") {
+        width = "fit-content";
+        margin = "0 5px";
+        padding = "5px 15px";
+    } else if (type === "delete") {
+        width = "70px";
+        margin = "0 4px 0";
+        padding = "0 4px 0";
+    } else if (type === "add") {
+        width = "120px";
+        margin = "0 5px";
+        padding = "3px 10px";
+    } else {
+        width = "150px";
+        margin = "30px 0";
+        padding = "5px 0";
+    }
 
     const btnBgColor = {
-        backgroundColor: variant === "cyan" ? "#66ffff" : variant === "dark" ? "#b3b3b3" : "white",
+        backgroundColor: bg,
         fontWeight: bold ? "700" : "normal",
-        minWidth: type === "unstyled" ? "fit-content" : type === "delete" ? "70px" : type === "add" ? "120px" : "150px",
+        minWidth: width,
         borderRadius: "10px",
-        margin: type === "unstyled" ? "0 5px" : type === "delete" ? "0 4px 0" : type === "add" ? "0 5px" : "30px 0",
-        padding: type === "unstyled" ? "5px 15px" : type === "delete" ? "0 4px 0" : type === "add" ? "3px 10px" : "5px 0",
+        margin,
+        padding,
     };
 
     return (

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Button } from '..';
 import img from '../../assets/delete-image.PNG';
-import { deleteUser } from '../../redux/rtdbActions';
+import { deleteUser } from '../../redux/fsdbActions';
 import "./modal.scss";
 
 const DeleteModal = (props) => {

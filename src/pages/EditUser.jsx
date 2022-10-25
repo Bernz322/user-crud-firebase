@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Button } from '../components';
-import { getOneUser, updateUser } from '../redux/rtdbActions';
+import { getOneUser, updateUser } from '../redux/fsdbActions';
 import { validateEmail } from '../utils/utils';
 
 const EditUser = () => {
@@ -16,14 +16,13 @@ const EditUser = () => {
     let buttonText = "Save";
     let buttonVariant = "cyan";
     useEffect(() => {
-        const fetch = async () => {
-            try {
-                const res = await dispatch(getOneUser(id));
-                setName(res.name);
-                setEmail(res.email);
-            } catch (error) {
-                console.log(error);
-            }
+        const fetch = () => {
+            dispatch(getOneUser(id)).then((data) => {
+                setName(data.name);
+                setEmail(data.email);
+            }).catch((err) => {
+                console.log(err);
+            });
         };
         fetch();
     }, [dispatch, id]);

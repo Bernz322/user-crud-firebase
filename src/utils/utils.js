@@ -1,12 +1,20 @@
 export const tablePopulate = (data) => {
     let len = data?.length;
     let size;
-    size = len === 0 ? size = 5
-        : len === 1 ? size = 4
-            : len === 2 ? size = 3
-                : len === 3 ? size = 2
-                    : len === 4 ? size = 1
-                        : size = 0;
+
+    if (len === 0) {
+        size = 5;
+    } else if (len === 1) {
+        size = 4;
+    } else if (len === 2) {
+        size = 3;
+    } else if (len === 3) {
+        size = 2;
+    } else if (len === 4) {
+        size = 1;
+    } else {
+        size = 0;
+    }
 
     let filteredData = [];
 

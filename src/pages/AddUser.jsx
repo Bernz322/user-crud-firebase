@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../components';
 import { validateEmail } from '../utils/utils';
-import { addUser } from '../redux/rtdbActions';
+import { addUser } from '../redux/fsdbActions';
 import classes from "../styles/login.module.scss";
 
 const AddUser = () => {
